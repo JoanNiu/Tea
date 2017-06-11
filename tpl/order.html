@@ -1,0 +1,39 @@
+<!--引入顶部文件-->
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+    <!-- 提交订单-->
+    <form id="order">
+        <div class="form-group">
+            <label for="name">联系人</label>
+            <input type="text" id="name" class="form-control" placeholder="旭旭" ng-model="uname"/>
+            <p class="help-block alert alert-danger hidden" id="nameTip" >请输入联系人</p>
+        </div>
+        <div class="form-group">
+            <label>性别</label>
+            <br/>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" ng-model="gender" value="1" ng-checked="true"/>先生
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="2" ng-model="gender"/>女士
+                </label>
+        </div>
+        <div class="form-group">
+            <label for="phone">联系电话</label>
+            <input type="text" id="phone" class="form-control" placeholder="13501234567" ng-model="phone"/>
+        </div>
+        <div class="form-group">
+            <label for="address">地址</label>
+            <textarea type="text"  id="address" class="form-control" placeholder="迎春南街" rows="6"  ng-model="addr"></textarea>
+        </div>
+        <button class="btn btn-success btn-block" ng-click="orderSubmit()" ng-disabled="!uname||!phone||!addr">确定下单</button>
+    </form>
+    <div id="orderSuccess" class="img-thumbnail" style="width:100%;padding:20px;">
+        <div class="alert alert-success">
+            订购成功！您的订单编号为：{{result[0].oid}}。您可以在<a href="#/myorder/{{phone}}">用户中心</a>查看订单详情！
+        </div>
+    </div>
+</div>
+
+<!--引入底部文件-->
+<div ng-include="'tpl/include/footer.html'"></div>

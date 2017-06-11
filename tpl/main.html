@@ -1,0 +1,35 @@
+<!--引入头部文件-->
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+<!--搜索框-->
+<div class="form-group has-feedback ">
+    <input type="text" class="form-control" placeholder="请输入茶名" ng-model="key" ng-keyup="search()">
+    <span class="form-control-feedback glyphicon glyphicon-search"></span>
+</div>
+<!--菜单列表-->
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="obj in result">
+            <a href="#/detail/{{obj.did}}">
+                <div class="media-left media-middle">
+                    <img ng-src="img/{{obj.img_sm}}" class="media-object"/>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{obj.name}}</h2>
+                    <p>{{obj.intro}}</p>
+                    <hr/>
+                    <h4>{{obj.price|currency:"￥"}}/100克</h4>
+                </div>
+            </a>
+        </li>
+    </ul>
+<!--按钮-->
+<button class="btn btn-success btn-block" ng-click="more()" ng-hide="start>7">加载更多</button>
+<!-- 没有更多数据了-->
+<div class="alert alert-danger" ng-show="start>7">
+    <span class="glyphicon  glyphicon-warning-sign"></span>
+    没有更多数据了！
+</div>
+
+</div>
+<!--引入底部文件-->
+<div ng-include="'tpl/include/footer.html'"></div>

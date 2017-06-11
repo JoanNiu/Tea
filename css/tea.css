@@ -1,0 +1,45 @@
+/*实现元素的居中显示*/
+.align-center{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+body{
+    padding:60px 0 60px 0;
+}
+/*****footer底部文件的样式*****/
+footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+footer a{
+    color:#666;
+    width:33%;
+}
+
+/*****main文件样式设置*****/
+ul.list-group a{
+    color:#666;
+}
+ul.list-group a:hover{
+    text-decoration: none;
+    /*color:#23527c;*/
+}
+/*****detail文件样式设置*****/
+/*****order文件样式设置*****/
+#order{
+    overflow: hidden;
+}
+#orderSuccess{
+    display:none;
+}
+
+/*****myorder文件样式设置*****/
+div.container>table>tbody>tr>td{
+    vertical-align: middle;
+}
